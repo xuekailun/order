@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: order
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: root
+    url: jdbc:mysql://47.105.157.91:3306/springcolud_sell?characterEncoding=utf-8&useSSL=false
+  jpa:
+    show-sql: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://47.105.157.91:8761/eureka/
+  instance:
+    prefer-ip-address: true
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  type-aliases-package: com.moon.order.dao
+  configuration:
+    map-underscore-to-camel-case: true
+logging:
+  level:
+    com.moon.order.dao: debug
+server:
+  port: 0
